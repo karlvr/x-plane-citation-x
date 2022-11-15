@@ -1,0 +1,184 @@
+A
+1100
+ACF_CONFIG
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/throttle/stow_emer_L_toggle laminar/CitX/throttle/stow_emer_L_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/throttle/stow_emer_R_toggle laminar/CitX/throttle/stow_emer_R_term
+
+CMND_PRED laminar/CitX/primus/cmd_source1_pilot_up sim/cockpit2/EFIS/EFIS_1_selection_pilot == 3
+CMND_PRED laminar/CitX/primus/cmd_source1_pilot_dwn sim/cockpit2/EFIS/EFIS_1_selection_pilot == 1
+
+CMND_PRED laminar/CitX/primus/cmd_source2_pilot_up sim/cockpit2/EFIS/EFIS_2_selection_pilot == 3
+CMND_PRED laminar/CitX/primus/cmd_source2_pilot_dwn sim/cockpit2/EFIS/EFIS_2_selection_pilot == 1
+
+CMND_PRED laminar/CitX/primus/cmd_source1_copilot_up sim/cockpit2/EFIS/EFIS_1_selection_copilot == 3
+CMND_PRED laminar/CitX/primus/cmd_source1_copilot_dwn sim/cockpit2/EFIS/EFIS_1_selection_copilot == 1
+
+CMND_PRED laminar/CitX/primus/cmd_source2_copilot_up sim/cockpit2/EFIS/EFIS_2_selection_copilot == 3
+CMND_PRED laminar/CitX/primus/cmd_source2_copilot_dwn sim/cockpit2/EFIS/EFIS_2_selection_copilot == 1
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/lights/dimming_switch_toggle laminar/CitX/lights/dim_lights_switch_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/fuel/cmd_gravity_flow_toggle sim/cockpit2/fuel/fuel_gravity_crossflow
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_battery_left_toggle sim/cockpit2/electrical/battery_on[1]
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_battery_right_toggle sim/cockpit2/electrical/battery_on[2]
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_ext_pwr_toggle sim/cockpit/electrical/gpu_on
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_avionics_toggle sim/cockpit2/switches/avionics_power_on
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_avionics_eicas_toggle sim/cockpit2/switches/gnd_com_power_on
+ 
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_pitot_static_left_toggle laminar/CitX/ice/pitot_static_left_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_pitot_static_right_toggle laminar/CitX/ice/pitot_static_right_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_wing_light_toggle sim/cockpit2/switches/generic_lights_switch[1]
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_windshield_air_toggle sim/cockpit2/switches/rain_repellent_switch[0]
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_wing_crossover_toggle laminar/CitX/ice/wing_crossover_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_engine_left_toggle sim/cockpit2/ice/cowling_thermal_anti_ice_per_engine[0]
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_engine_right_toggle sim/cockpit2/ice/cowling_thermal_anti_ice_per_engine[1]
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_stabilizer_left_toggle laminar/CitX/ice/stabilizer_left_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_stabilizer_right_toggle laminar/CitX/ice/stabilizer_right_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/ice/cmd_slat_toggle laminar/CitX/ice/slat_term
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/hydraulics/cmd_aux_pump_toggle sim/cockpit2/switches/electric_hydraulic_pump_on
+CMND_PRED_TOGGLE_VALUE laminar/CitX/hydraulics/cmd_unload_pump_A_toggle sim/cockpit2/hydraulics/actuators/engine_pump[0] 1 0
+CMND_PRED_TOGGLE_VALUE laminar/CitX/hydraulics/cmd_unload_pump_B_toggle sim/cockpit2/hydraulics/actuators/engine_pump[1] 1 0
+CMND_PRED_TOGGLE_BOOL laminar/CitX/hydraulics/cmd_antiskid_toggle laminar/CitX/hydraulics/antiskid_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/lights/cmd_recognition_toggle laminar/CitX/lights/recognition_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/lights/cmd_navigation_toggle sim/cockpit2/switches/navigation_lights_on
+CMND_PRED_TOGGLE_BOOL laminar/CitX/lights/cmd_tail_flood_toggle sim/cockpit2/switches/generic_lights_switch[0]
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/pressurization/cmd_safeguard_cabin_dump_toggle laminar/CitX/pressurization/safeguard_cabin_dump_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/pressurization/cmd_cabin_dump_toggle sim/cockpit2/pressurization/actuators/dump_all_on
+CMND_PRED_TOGGLE_BOOL laminar/CitX/pressurization/cmd_safeguard_iso_vlv_toggle laminar/CitX/pressurization/safeguard_iso_vlv_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/pressurization/cmd_iso_vlv_toggle laminar/CitX/pressurization/iso_vlv_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/pressurization/cmd_alt_sel_toggle laminar/CitX/pressurization/alt_sel_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/pressurization/cmd_manual_toggle laminar/CitX/pressurization/manual_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/pressurization/cmd_wemac_boost_toggle laminar/CitX/pressurization/wemac_boost_term
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/APU/master_switch_toggle laminar/CitX/APU/master_switch_term
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/lights/cmd_cabin_safeguard_toggle laminar/CitX/lights/cabin_master_safeguard_term
+CMND_PRED_TOGGLE_VALUE laminar/CitX/lights/cmd_cabin_master_toggle laminar/CitX/lights/cabin_master_term 1 0
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/engine/cmd_gnd_idle_toggle laminar/CitX/engine/gnd_idle_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/lights/cmd_taxi_toggle sim/cockpit2/switches/taxi_light_on
+CMND_PRED_TOGGLE_BOOL laminar/CitX/lights/cmd_landing_left_toggle sim/cockpit2/switches/landing_lights_switch[0]
+CMND_PRED_TOGGLE_BOOL laminar/CitX/lights/cmd_landing_right_toggle sim/cockpit2/switches/landing_lights_switch[1]
+
+CMND_PRED laminar/CitX/oxygen/cmd_pass_oxy_up laminar/CitX/oxygen/pass_oxy_term == 2
+CMND_PRED laminar/CitX/oxygen/cmd_pass_oxy_dwn laminar/CitX/oxygen/pass_oxy_term == 0
+
+CMND_PRED laminar/CitX/ahrs/cmd_mode_pilot_up laminar/CitX/ahrs/mode_pilot == 1
+CMND_PRED laminar/CitX/ahrs/cmd_mode_pilot_dwn laminar/CitX/ahrs/mode_pilot == -1
+
+CMND_PRED laminar/CitX/ahrs/cmd_adjust_pilot_up laminar/CitX/ahrs/adjust_pilot == -1
+CMND_PRED laminar/CitX/ahrs/cmd_adjust_pilot_dwn laminar/CitX/ahrs/adjust_pilot == 1
+
+CMND_PRED laminar/CitX/lights/emerg_light_switch_up laminar/CitX/lights/emerg_light_switch_term == 2
+CMND_PRED laminar/CitX/lights/emerg_light_switch_dwn laminar/CitX/lights/emerg_light_switch_term == 0
+
+CMND_PRED laminar/CitX/fuel/cmd_crossfeed_right laminar/CitX/fuel/crossfeed_term == 1
+CMND_PRED laminar/CitX/fuel/cmd_crossfeed_left  laminar/CitX/fuel/crossfeed_term == -1
+
+CMND_PRED laminar/CitX/fuel/cmd_transfer_left_up laminar/CitX/fuel/transfer_left_term == 0
+CMND_PRED laminar/CitX/fuel/cmd_transfer_left_dwn laminar/CitX/fuel/transfer_left_term == 2
+CMND_PRED laminar/CitX/fuel/cmd_transfer_right_up laminar/CitX/fuel/transfer_right_term == 0
+CMND_PRED laminar/CitX/fuel/cmd_transfer_right_dwn laminar/CitX/fuel/transfer_right_term == 2
+
+CMND_PRED laminar/CitX/electrical/cmd_load_shed_up laminar/CitX/electrical/load_shed_term == 1
+CMND_PRED laminar/CitX/electrical/cmd_load_shed_dwn laminar/CitX/electrical/load_shed_term == -1
+
+CMND_PRED laminar/CitX/electrical/cmd_generator_left_up laminar/CitX/electrical/generator_left_term == 1
+CMND_PRED laminar/CitX/electrical/cmd_generator_left_dwn laminar/CitX/electrical/generator_left_term == -1
+CMND_PRED laminar/CitX/electrical/cmd_generator_right_up laminar/CitX/electrical/generator_right_term == 1
+CMND_PRED laminar/CitX/electrical/cmd_generator_right_dwn laminar/CitX/electrical/generator_right_term == -1
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_battery_left_toggle laminar/CitX/electrical/battery_left_term
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_battery_right_toggle laminar/CitX/electrical/battery_right_term
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_ext_pwr_toggle laminar/CitX/electrical/ext_pwr_term
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_avionics_toggle laminar/CitX/electrical/avionics_term
+
+CMND_PRED_TOGGLE_BOOL laminar/CitX/electrical/cmd_avionics_eicas_toggle laminar/CitX/electrical/avionics_eicas_term
+
+CMND_PRED laminar/CitX/engine/cmd_ignition_switch_right_up laminar/CitX/engine/ignition_switch_right_term == 1
+CMND_PRED laminar/CitX/engine/cmd_ignition_switch_right_dwn laminar/CitX/engine/ignition_switch_right_term == -1
+CMND_PRED laminar/CitX/engine/cmd_ignition_switch_left_up laminar/CitX/engine/ignition_switch_left_term == 1
+CMND_PRED laminar/CitX/engine/cmd_ignition_switch_left_dwn laminar/CitX/engine/ignition_switch_left_term == -1
+
+CMND_PRED laminar/CitX/engine/cmd_fadec_switch_right_up laminar/CitX/engine/fadec_switch_right_term == 0
+CMND_PRED laminar/CitX/engine/cmd_fadec_switch_right_dwn laminar/CitX/engine/fadec_switch_right_term == 2
+CMND_PRED laminar/CitX/engine/cmd_fadec_switch_left_up laminar/CitX/engine/fadec_switch_left_term == 0
+CMND_PRED laminar/CitX/engine/cmd_fadec_switch_left_dwn laminar/CitX/engine/fadec_switch_left_term == 2
+
+CMND_PRED laminar/CitX/electrical/cmd_stby_pwr_up laminar/CitX/electrical/battery_stby_pwr_term == 1
+CMND_PRED laminar/CitX/electrical/cmd_stby_pwr_dwn laminar/CitX/electrical/battery_stby_pwr_term == -1
+
+CMND_PRED laminar/CitX/fuel/cmd_boost_right_up laminar/CitX/fuel/boost_right_term == 1
+CMND_PRED laminar/CitX/fuel/cmd_boost_right_dwn laminar/CitX/fuel/boost_right_term == -1
+CMND_PRED laminar/CitX/fuel/cmd_boost_left_up laminar/CitX/fuel/boost_left_term == 1
+CMND_PRED laminar/CitX/fuel/cmd_boost_left_dwn laminar/CitX/fuel/boost_left_term == -1
+
+CMND_PRED laminar/CitX/ice/cmd_windshield_left_up laminar/CitX/ice/windshield_left_term == 2
+CMND_PRED laminar/CitX/ice/cmd_windshield_left_dwn laminar/CitX/ice/windshield_left_term == 0
+
+CMND_PRED laminar/CitX/ice/cmd_windshield_right_up laminar/CitX/ice/windshield_right_term == 2
+CMND_PRED laminar/CitX/ice/cmd_windshield_right_dwn laminar/CitX/ice/windshield_right_term == 0
+
+CMND_PRED laminar/CitX/lights/cmd_gnd_rec_anti_coll_up laminar/CitX/lights/gnd_rec_anti_coll_term == 2
+CMND_PRED laminar/CitX/lights/cmd_gnd_rec_anti_coll_dwn laminar/CitX/lights/gnd_rec_anti_coll_term == 0
+
+CMND_PRED laminar/CitX/lights/cmd_seat_belt_pass_safety_up laminar/CitX/lights/seat_belt_pass_safety_term == -1
+CMND_PRED laminar/CitX/lights/cmd_seat_belt_pass_safety_dwn laminar/CitX/lights/seat_belt_pass_safety_term == 1
+
+CMND_PRED laminar/CitX/pressurization/cmd_alt_manual_up laminar/CitX/pressurization/alt_manual_term == 1
+CMND_PRED laminar/CitX/pressurization/cmd_alt_manual_dwn laminar/CitX/pressurization/alt_manual_term == -1
+
+CMND_PRED laminar/CitX/pressurization/cmd_rate_manual_up laminar/CitX/pressurization/rate_manual_term == 1000
+CMND_PRED laminar/CitX/pressurization/cmd_rate_manual_dwn laminar/CitX/pressurization/rate_manual_term == 100
+
+CMND_PRED laminar/CitX/pressurization/cmd_pac_bleed_up laminar/CitX/pressurization/pac_bleed_term == 1
+CMND_PRED laminar/CitX/pressurization/cmd_pac_bleed_dwn laminar/CitX/pressurization/pac_bleed_term == 0
+
+CMND_PRED laminar/CitX/pressurization/cmd_altitude_up laminar/CitX/pressurization/altitude_knob_term == 14000
+CMND_PRED laminar/CitX/pressurization/cmd_altitude_dwn laminar/CitX/pressurization/altitude_knob_term == -1000
+
+CMND_PRED laminar/CitX/pressurization/cmd_rate_up laminar/CitX/pressurization/rate_term == 2000
+CMND_PRED laminar/CitX/pressurization/cmd_rate_dwn laminar/CitX/pressurization/rate_term == 500
+
+CMND_PRED laminar/CitX/bleedair/cmd_temp_cockpit_sel_up laminar/CitX/bleedair/temp_cockpit_sel_term == 32
+CMND_PRED laminar/CitX/bleedair/cmd_temp_cockpit_sel_dwn laminar/CitX/bleedair/temp_cockpit_sel_term == 12
+CMND_PRED laminar/CitX/bleedair/cmd_temp_cabin_sel_up laminar/CitX/bleedair/temp_cabin_sel_term == 32
+CMND_PRED laminar/CitX/bleedair/cmd_temp_cabin_sel_dwn laminar/CitX/bleedair/temp_cabin_sel_term == 12
+
+CMND_PRED laminar/CitX/bleedair/cmd_temp_display_select_up laminar/CitX/bleedair/temp_display_select_term == -3
+CMND_PRED laminar/CitX/bleedair/cmd_temp_display_select_dwn laminar/CitX/bleedair/temp_display_select_term == 3
+
+CMND_PRED laminar/CitX/bleedair/cmd_air_cond_cockpit_up laminar/CitX/bleedair/air_cond_cockpit_term == 2
+CMND_PRED laminar/CitX/bleedair/cmd_air_cond_cockpit_dwn laminar/CitX/bleedair/air_cond_cockpit_term == 0
+CMND_PRED laminar/CitX/bleedair/cmd_air_cond_cabin_up laminar/CitX/bleedair/air_cond_cabin_term == 2
+CMND_PRED laminar/CitX/bleedair/cmd_air_cond_cabin_dwn laminar/CitX/bleedair/air_cond_cabin_term == 0
+
+CMND_PRED laminar/CitX/bleedair/cmd_engine_left_up laminar/CitX/bleedair/engine_left_term == 2
+CMND_PRED laminar/CitX/bleedair/cmd_engine_left_dwn laminar/CitX/bleedair/engine_left_term == 0
+CMND_PRED laminar/CitX/bleedair/cmd_engine_right_up laminar/CitX/bleedair/engine_right_term == 2
+CMND_PRED laminar/CitX/bleedair/cmd_engine_right_dwn laminar/CitX/bleedair/engine_right_term == 0
+
+CMND_PRED laminar/CitX/bleedair/cmd_iso_valve_up laminar/CitX/bleedair/iso_valve_term == 1
+CMND_PRED laminar/CitX/bleedair/cmd_iso_valve_dwn laminar/CitX/bleedair/iso_valve_term == 0
+
+CMND_PRED laminar/CitX/lights/map_right_knob_up laminar/CitX/lights/map_right_knob == 1
+CMND_PRED laminar/CitX/lights/map_right_knob_dwn laminar/CitX/lights/map_right_knob == 0
+
+CMND_PRED laminar/CitX/APU/bleed_switch_up laminar/CitX/APU/bleed_air_switch_term == 1
+CMND_PRED laminar/CitX/APU/bleed_switch_dwn laminar/CitX/APU/bleed_air_switch_term == 0
+
+CMND_PRED laminar/CitX/APU/gen_switch_up laminar/CitX/APU/gen_switch_term == 1
+CMND_PRED laminar/CitX/APU/gen_switch_dwn laminar/CitX/APU/gen_switch_term == -1
+
+CMND_PRED laminar/CitX/APU/starter_switch_up sim/cockpit2/electrical/APU_starter_switch == 2
+CMND_PRED laminar/CitX/APU/starter_switch_dwn sim/cockpit2/electrical/APU_starter_switch == 0
+
+CMND_PRED laminar/CitX/engine/cmd_eng_sync_up laminar/CitX/engine/eng_sync_term == 1
+CMND_PRED laminar/CitX/engine/cmd_eng_sync_dwn laminar/CitX/engine/eng_sync_term == -1
