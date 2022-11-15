@@ -123,10 +123,38 @@ function cmd_battery_left_toggle(phase, duration)
 	end
 end
 
+function cmd_battery_left_on(phase, duration)
+	if phase == 0 then
+		battery_left_value = 1
+		--evaluate_stby_factor()
+	end
+end
+
+function cmd_battery_left_off(phase, duration)
+	if phase == 0 then
+		battery_left_value = 0
+		--evaluate_stby_factor()
+	end
+end
+
 ----------------------------------- RIGHT BATTERY SWITCH UP/DWN
 function cmd_battery_right_toggle(phase, duration)
 	if phase == 0 then
 		battery_right_value = math.abs(battery_right_value - 1)
+		--evaluate_stby_factor()
+	end
+end
+
+function cmd_battery_right_on(phase, duration)
+	if phase == 0 then
+		battery_right_value = 1
+		--evaluate_stby_factor()
+	end
+end
+
+function cmd_battery_right_off(phase, duration)
+	if phase == 0 then
+		battery_right_value = 0
 		--evaluate_stby_factor()
 	end
 end
@@ -146,10 +174,34 @@ function cmd_avionics_toggle(phase, duration)
 	end
 end
 
+function cmd_avionics_on(phase, duration)
+	if phase == 0 then
+		avionics_value = 1
+	end
+end
+
+function cmd_avionics_off(phase, duration)
+	if phase == 0 then
+		avionics_value = 0
+	end
+end
+
 ----------------------------------- AVIONICS EICAS SWITCH UP/DWN
 function cmd_avionics_eicas_toggle(phase, duration)
 	if phase == 0 then
 		avionics_eicas_value = math.abs(avionics_eicas_value - 1)
+	end
+end
+
+function cmd_avionics_eicas_on(phase, duration)
+	if phase == 0 then
+		avionics_eicas_value = 1
+	end
+end
+
+function cmd_avionics_eicas_off(phase, duration)
+	if phase == 0 then
+		avionics_eicas_value = 0
 	end
 end
 
@@ -219,12 +271,28 @@ cmdgenerLdwn = create_command("laminar/CitX/electrical/cmd_generator_left_dwn","
 cmdgenerRup = create_command("laminar/CitX/electrical/cmd_generator_right_up","Generator R switch up",cmd_generator_right_up)
 cmdgenerRdwn = create_command("laminar/CitX/electrical/cmd_generator_right_dwn","Generator R switch down",cmd_generator_right_dwn)
 cmdbatteryLtog = create_command("laminar/CitX/electrical/cmd_battery_left_toggle","Battery L switch toggle",cmd_battery_left_toggle)
+cmdbatteryLon = create_command("laminar/CitX/electrical/cmd_battery_left_on","Battery L switch on",cmd_battery_left_on)
+cmdbatteryLoff = create_command("laminar/CitX/electrical/cmd_battery_left_off","Battery L switch off",cmd_battery_left_off)
+replace_command("sim/electrical/battery_1_on",cmd_battery_left_on)
+replace_command("sim/electrical/battery_1_off",cmd_battery_left_off)
 cmdbatteryRtog = create_command("laminar/CitX/electrical/cmd_battery_right_toggle","Battery R switch toggle",cmd_battery_right_toggle)
+cmdbatteryRon = create_command("laminar/CitX/electrical/cmd_battery_right_on","Battery R switch on",cmd_battery_right_on)
+cmdbatteryRoff = create_command("laminar/CitX/electrical/cmd_battery_right_off","Battery R switch off",cmd_battery_right_off)
+replace_command("sim/electrical/battery_2_on",cmd_battery_right_on)
+replace_command("sim/electrical/battery_2_off",cmd_battery_right_off)
 cmdextpwrtog = create_command("laminar/CitX/electrical/cmd_ext_pwr_toggle","External Power switch toggle",cmd_ext_pwr_toggle)
 cmdstbypwrup = create_command("laminar/CitX/electrical/cmd_stby_pwr_up","Standby power switch up",cmd_stby_pwr_up)
 cmdstbypwrdwn = create_command("laminar/CitX/electrical/cmd_stby_pwr_dwn","Standby power switch down",cmd_stby_pwr_dwn)
 cmdavionicstog = create_command("laminar/CitX/electrical/cmd_avionics_toggle","Avionics switch toggle",cmd_avionics_toggle)
+create_command("laminar/CitX/electrical/cmd_avionics_on","Avionics switch on",cmd_avionics_on)
+create_command("laminar/CitX/electrical/cmd_avionics_off","Avionics switch off",cmd_avionics_off)
+replace_command("sim/systems/avionics_on",cmd_avionics_on)
+replace_command("sim/systems/avionics_off",cmd_avionics_off)
 cmdavionicseicastog = create_command("laminar/CitX/electrical/cmd_avionics_eicas_toggle","Avionics EICAS switch toggle",cmd_avionics_eicas_toggle)
+create_command("laminar/CitX/electrical/cmd_avionics_eicas_on","Avionics EICAS switch on",cmd_avionics_eicas_on)
+create_command("laminar/CitX/electrical/cmd_avionics_eicas_off","Avionics EICAS switch off",cmd_avionics_eicas_off)
+replace_command("sim/systems/gnd_com_power_on",cmd_avionics_eicas_on)
+replace_command("sim/systems/gnd_com_power_off",cmd_avionics_eicas_off)
 
 
 

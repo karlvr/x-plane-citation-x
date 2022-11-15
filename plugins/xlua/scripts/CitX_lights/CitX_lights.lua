@@ -77,6 +77,18 @@ function cmd_navigation_toggle(phase, duration)
 	end
 end
 
+function cmd_navigation_on(phase, duration)
+	if phase == 0 then
+		navigation_value = 1
+	end
+end
+
+function cmd_navigation_off(phase, duration)
+	if phase == 0 then
+		navigation_value = 0
+	end
+end
+
 
 ----------------------------------- TAIL "LOGO" FLOOD SWITCH UP/DWN
 function cmd_tail_flood_toggle(phase, duration)
@@ -93,6 +105,18 @@ function cmd_taxi_toggle(phase, duration)
 	end
 end
 
+function cmd_taxi_on(phase, duration)
+	if phase == 0 then
+		taxi_value = 1
+	end
+end
+
+function cmd_taxi_off(phase, duration)
+	if phase == 0 then
+		taxi_value = 0
+	end
+end
+
 
 ----------------------------------- LANDING LIGHTS LH SWITCH UP/DWN
 function cmd_landing_L_toggle(phase, duration)
@@ -106,6 +130,20 @@ end
 function cmd_landing_R_toggle(phase, duration)
 	if phase == 0 then
 		landing_R_value = math.abs(landing_R_value - 1)
+	end
+end
+
+function cmd_landing_on(phase, duration)
+	if phase == 0 then
+		landing_L_value = 1
+		landing_R_value = 1
+	end
+end
+
+function cmd_landing_off(phase, duration)
+	if phase == 0 then
+		landing_L_value = 0
+		landing_R_value = 0
 	end
 end
 
@@ -169,11 +207,17 @@ cmdseatbeltpasafetydwn = create_command("laminar/CitX/lights/cmd_seat_belt_pass_
 
 cmdrecognitiontog = create_command("laminar/CitX/lights/cmd_recognition_toggle","Recognition lights switch toggle",cmd_recognition_toggle)
 cmdnavigationtog = create_command("laminar/CitX/lights/cmd_navigation_toggle","Navigation lights switch toggle",cmd_navigation_toggle)
+replace_command("sim/lights/nav_lights_on",cmd_navigation_on)
+replace_command("sim/lights/nav_lights_off",cmd_navigation_off)
 cmdtailfloodtog = create_command("laminar/CitX/lights/cmd_tail_flood_toggle","Tail flood lights switch toggle",cmd_tail_flood_toggle)
 
 cmdtaxitog = create_command("laminar/CitX/lights/cmd_taxi_toggle","Taxi lights switch toggle",cmd_taxi_toggle)
+replace_command("sim/lights/taxi_lights_on",cmd_taxi_on)
+replace_command("sim/lights/taxi_lights_off",cmd_taxi_off)
 cmdlandingLtog = create_command("laminar/CitX/lights/cmd_landing_left_toggle","Landing lights left toggle",cmd_landing_L_toggle)
 cmdlandingRtog = create_command("laminar/CitX/lights/cmd_landing_right_toggle","Landing lights right toggle",cmd_landing_R_toggle)
+replace_command("sim/lights/landing_lights_on",cmd_landing_on)
+replace_command("sim/lights/landing_lights_off",cmd_landing_off)
 
 cmdcabinsafeguardtoggle = create_command("laminar/CitX/lights/cmd_cabin_safeguard_toggle","Cabin master safeguard",cmd_cabin_safeguard_toggle)
 cmdcabinmastertoggle = create_command("laminar/CitX/lights/cmd_cabin_master_toggle","Cabin master toggle",cmd_cabin_master_toggle)
