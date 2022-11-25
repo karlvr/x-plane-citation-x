@@ -116,6 +116,21 @@ function func_do_nothing()
 
 end
 
+function cmd_engine_cutoff_left(phase, duration)
+	if phase == 0 then
+		CitX_throttle_ratio_L = -1
+	elseif phase == 2 then
+		CitX_throttle_ratio_L = 0
+	end
+end
+
+function cmd_engine_cutoff_right(phase, duration)
+	if phase == 0 then
+		CitX_throttle_ratio_R = -1
+	elseif phase == 2 then
+		CitX_throttle_ratio_R = 0
+	end
+end
 
 
 
@@ -171,7 +186,8 @@ stow_switch_R = create_dataref("laminar/CitX/throttle/stow_emer_R_term","number"
 cmdstowemerLtog = create_command("laminar/CitX/throttle/stow_emer_L_toggle","Emergency stow reverse left toggle",cmd_stow_emer_L_toggle)
 cmdstowemerRtog = create_command("laminar/CitX/throttle/stow_emer_R_toggle","Emergency stow reverse right toggle",cmd_stow_emer_R_toggle)
 
-
+create_command("laminar/CitX/engine/cmd_mixture_left_min", "Engine cut-off left", cmd_engine_cutoff_left)
+create_command("laminar/CitX/engine/cmd_mixture_right_min", "Engine cut-off right", cmd_engine_cutoff_right)
 
 --------------------------------- RUNTIME ---------------------------------
 
