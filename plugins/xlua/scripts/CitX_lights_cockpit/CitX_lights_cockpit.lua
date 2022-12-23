@@ -292,13 +292,13 @@ cmddimmingswitchtog = create_command("laminar/CitX/lights/dimming_switch_toggle"
 --------------------------------- DO THIS EACH FLIGHT START ---------------------------------
 function flight_start()
 
-	flood_knob = brightness_FLOOD
-	elec_knob = brightness_EL_STBY
-	left_knob = brightness_LH
-	right_knob = brightness_RH
-	ctr_knob = brightness_CTR
-	map_left_knob = brightness_MAP_L
-	map_right_knob = brightness_MAP_R
+	flood_knob, brightness_FLOOD = 0.75, 0.75
+	elec_knob, brightness_EL_STBY = 0.75, 0.75
+	left_knob, brightness_LH = 0.75, 0.75
+	right_knob, brightness_RH = 0.75, 0.75
+	ctr_knob, brightness_CTR = 0.75, 0.75
+	map_left_knob, brightness_MAP_L = 0, 0
+	map_right_knob, brightness_MAP_R = 0, 0
 	map_left_bulb_x = 0.0
 	map_left_bulb_z = -0.7
 	map_right_bulb_x = 0.0
