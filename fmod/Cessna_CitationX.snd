@@ -9,7 +9,7 @@ ACF_SOUNDS
 # Laminar Research                              #
 #################################################
 
-# ####### DO NOT HAND EDIT, THIS IS A GENERATED FILE, YOU WILL LOSE YOUR CHANGES ######## 
+# ####### DO NOT HAND EDIT, THIS IS A GENERATED FILE, YOU WILL LOSE YOUR CHANGES ON NEXT COMPILE ######## 
 #############################################################################################
 
 DISABLE_LEGACY_ALERT_SOUNDS
@@ -1025,13 +1025,6 @@ BEGIN_SOUND_ATTACHMENT
 	VEH_XYZ -0.120 0.613 -7.961
 	EVENT_CMND_HOLD_CUE laminar/CitX/standby/gyr_cage
 END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/rot_small_single
-	VEH_XYZ -0.120 0.613 -7.961
-	EVENT_POLYPHONIC
-	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot > 0
-	EVENT_END_COND ABS_DELTA=sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot == 0
-END_SOUND_ATTACHMENT
 
 # Switches: Audio L 
 #############################################################################################
@@ -1211,21 +1204,25 @@ END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ -0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_pilot_up
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ -0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_pilot_dwn
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ -0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source2_pilot_up
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ -0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source2_pilot_dwn
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
@@ -1276,11 +1273,13 @@ END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/rot_med_single
 	VEH_XYZ -0.188 0.361 -7.939
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN sim/instruments/map_zoom_out
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/rot_med_single
 	VEH_XYZ -0.188 0.361 -7.939
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN sim/instruments/map_zoom_in
 END_SOUND_ATTACHMENT
 
@@ -1319,11 +1318,13 @@ END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/rot_med_single
 	VEH_XYZ 0.000 0.361 -7.939
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN sim/instruments/center_control_left
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/rot_med_single
 	VEH_XYZ 0.000 0.361 -7.939
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN sim/instruments/center_control_right
 END_SOUND_ATTACHMENT
 
@@ -1332,21 +1333,25 @@ END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ 0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_copilot_up
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ 0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_copilot_dwn
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ 0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source2_copilot_up
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ 0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source2_copilot_dwn
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
@@ -1397,11 +1402,13 @@ END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/rot_med_single
 	VEH_XYZ 0.188 0.361 -7.939
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN sim/instruments/map_copilot_zoom_out
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/rot_med_single
 	VEH_XYZ 0.188 0.361 -7.939
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN sim/instruments/map_copilot_zoom_in
 END_SOUND_ATTACHMENT
 
@@ -3225,16 +3232,19 @@ END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/switch_white_small
 	VEH_XYZ 0.015 0.198 -7.573
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/engine/cmd_gnd_idle_toggle
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/switch_white_small
 	VEH_XYZ 0.015 0.198 -7.573
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/lights/cmd_taxi_toggle
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/switch_white_small
 	VEH_XYZ 0.015 0.198 -7.573
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN sim/lights/taxi_lights_on
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
@@ -3250,6 +3260,7 @@ END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/switch_white_small
 	VEH_XYZ 0.015 0.198 -7.573
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/lights/cmd_landing_right_toggle
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
@@ -3538,5 +3549,6 @@ END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/switch_metal_small
 	VEH_XYZ -0.056 0.982 -7.688
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/lights/monitor_button_toggle
 END_SOUND_ATTACHMENT

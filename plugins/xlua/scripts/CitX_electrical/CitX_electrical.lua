@@ -308,7 +308,7 @@ function flight_start()
 	generator_right_value = generator_on_R
 	battery_left_value = battery_on_L
 	battery_right_value = battery_on_R
-	stby_pwr_value = 0
+	stby_pwr_value = startup_running
 	battery_on_STBY = 0
 	avionics_value = avionics_power * startup_running
 	avionics_eicas_value = avionics_value
