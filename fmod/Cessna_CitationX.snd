@@ -1205,6 +1205,20 @@ BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ -0.383 0.626 -7.961
 	EVENT_POLYPHONIC
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_1_selection_pilot > 0
+	EVENT_END_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_1_selection_pilot == 0
+END_SOUND_ATTACHMENT
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /citx/equipment/switches/sel_small
+	VEH_XYZ -0.383 0.626 -7.961
+	EVENT_POLYPHONIC
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_2_selection_pilot > 0
+	EVENT_END_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_2_selection_pilot == 0
+END_SOUND_ATTACHMENT
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /citx/equipment/switches/sel_small
+	VEH_XYZ -0.383 0.626 -7.961
+	EVENT_POLYPHONIC
 	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_pilot_up
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
@@ -1330,6 +1344,20 @@ END_SOUND_ATTACHMENT
 
 # Switches: Efis R 
 #############################################################################################
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /citx/equipment/switches/sel_small
+	VEH_XYZ 0.383 0.626 -7.961
+	EVENT_POLYPHONIC
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_1_selection_copilot > 0
+	EVENT_END_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_1_selection_copilot == 0
+END_SOUND_ATTACHMENT
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /citx/equipment/switches/sel_small
+	VEH_XYZ 0.383 0.626 -7.961
+	EVENT_POLYPHONIC
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_2_selection_copilot > 0
+	EVENT_END_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_2_selection_copilot == 0
+END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/sel_small
 	VEH_XYZ 0.383 0.626 -7.961
