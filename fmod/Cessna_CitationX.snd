@@ -1216,30 +1216,6 @@ BEGIN_SOUND_ATTACHMENT
 	EVENT_END_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_2_selection_pilot == 0
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/sel_small
-	VEH_XYZ -0.383 0.626 -7.961
-	EVENT_POLYPHONIC
-	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_pilot_up
-END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/sel_small
-	VEH_XYZ -0.383 0.626 -7.961
-	EVENT_POLYPHONIC
-	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_pilot_dwn
-END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/sel_small
-	VEH_XYZ -0.383 0.626 -7.961
-	EVENT_POLYPHONIC
-	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source2_pilot_up
-END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/sel_small
-	VEH_XYZ -0.383 0.626 -7.961
-	EVENT_POLYPHONIC
-	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source2_pilot_dwn
-END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/pb_plastic_hold
 	VEH_XYZ -0.383 0.626 -7.961
 	EVENT_CMND_HOLD_CUE sim/autopilot/hsi_toggle_preview
@@ -1357,30 +1333,6 @@ BEGIN_SOUND_ATTACHMENT
 	EVENT_POLYPHONIC
 	EVENT_START_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_2_selection_copilot > 0
 	EVENT_END_COND ABS_DELTA=sim/cockpit2/EFIS/EFIS_2_selection_copilot == 0
-END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/sel_small
-	VEH_XYZ 0.383 0.626 -7.961
-	EVENT_POLYPHONIC
-	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_copilot_up
-END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/sel_small
-	VEH_XYZ 0.383 0.626 -7.961
-	EVENT_POLYPHONIC
-	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source1_copilot_dwn
-END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/sel_small
-	VEH_XYZ 0.383 0.626 -7.961
-	EVENT_POLYPHONIC
-	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source2_copilot_up
-END_SOUND_ATTACHMENT
-BEGIN_SOUND_ATTACHMENT
-	EVENT_NAME /citx/equipment/switches/sel_small
-	VEH_XYZ 0.383 0.626 -7.961
-	EVENT_POLYPHONIC
-	EVENT_CMND_DOWN laminar/CitX/primus/cmd_source2_copilot_dwn
 END_SOUND_ATTACHMENT
 BEGIN_SOUND_ATTACHMENT
 	EVENT_NAME /citx/equipment/switches/pb_plastic_hold
