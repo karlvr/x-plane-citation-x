@@ -1,0 +1,153 @@
+--- plugins/xlua/scripts/CitX_lights/CitX_lights.lua	2022-11-06 13:10:26
++++ /Users/karlvr/Development/Cessna Citation X/plugins/xlua/scripts/CitX_lights/CitX_lights.lua	2024-02-18 16:48:30
+@@ -50,6 +50,43 @@
+ 	end
+ end
+ 
++manual_beacon_lights_on = 0
++
++function cmd_beacon_lights_on(phase, duration)
++	if phase == 0 then
++		if gnd_rec_anti_coll_value < 1 then
++			gnd_rec_anti_coll_value = 1
++		end
++		manual_beacon_lights_on = 1
++	end
++end
++
++function cmd_strobe_lights_on(phase, duration)
++	if phase == 0 then
++		gnd_rec_anti_coll_value = 2
++	end
++end
++
++function cmd_beacon_lights_off(phase, duration)
++	if phase == 0 then
++		if gnd_rec_anti_coll_value == 1 then
++			-- don't turn off if strobes are on
++			gnd_rec_anti_coll_value = 0
++		end
++		manual_beacon_lights_on = 0
++	end
++end
++
++function cmd_strobe_lights_off(phase, duration)
++	if phase == 0 then
++		if manual_beacon_lights_on == 1 then
++			gnd_rec_anti_coll_value = 1
++		else
++			gnd_rec_anti_coll_value = 0
++		end
++	end
++end
++
+ ----------------------------------- SEAT BELT - PASS SAFETY SWITCH UP/DWN
+ function cmd_seat_belt_pass_safety_up(phase, duration)
+ 	if phase == 0 and seat_belt_pass_safety_value > -1 then
+@@ -69,6 +106,17 @@
+ 	end
+ end
+ 
++function cmd_recognition_on(phase, duration)
++	if phase == 0 then
++		recognition_value = 1
++	end
++end
++
++function cmd_recognition_off(phase, duration)
++	if phase == 0 then
++		recognition_value = 0
++	end
++end
+ 
+ ----------------------------------- NAVIGATION SWITCH UP/DWN
+ function cmd_navigation_toggle(phase, duration)
+@@ -77,7 +125,19 @@
+ 	end
+ end
+ 
++function cmd_navigation_on(phase, duration)
++	if phase == 0 then
++		navigation_value = 1
++	end
++end
+ 
++function cmd_navigation_off(phase, duration)
++	if phase == 0 then
++		navigation_value = 0
++	end
++end
++
++
+ ----------------------------------- TAIL "LOGO" FLOOD SWITCH UP/DWN
+ function cmd_tail_flood_toggle(phase, duration)
+ 	if phase == 0 then
+@@ -90,6 +150,18 @@
+ function cmd_taxi_toggle(phase, duration)
+ 	if phase == 0 then
+ 		taxi_value = math.abs(taxi_value - 1)
++	end
++end
++
++function cmd_taxi_on(phase, duration)
++	if phase == 0 then
++		taxi_value = 1
++	end
++end
++
++function cmd_taxi_off(phase, duration)
++	if phase == 0 then
++		taxi_value = 0
+ 	end
+ end
+ 
+@@ -109,7 +181,21 @@
+ 	end
+ end
+ 
++function cmd_landing_on(phase, duration)
++	if phase == 0 then
++		landing_L_value = 1
++		landing_R_value = 1
++	end
++end
+ 
++function cmd_landing_off(phase, duration)
++	if phase == 0 then
++		landing_L_value = 0
++		landing_R_value = 0
++	end
++end
++
++
+ ----------------------------------- CABIN MASTER SAFEGUARD TOGGLE
+ function cmd_cabin_safeguard_toggle(phase, duration)
+ 	if phase == 0 then
+@@ -163,17 +249,27 @@
+ 
+ cmdgndrecanticollup = create_command("laminar/CitX/lights/cmd_gnd_rec_anti_coll_up","Anti collision switch up",cmd_gnd_rec_anti_coll_up)
+ cmdgndrecanticolldwn = create_command("laminar/CitX/lights/cmd_gnd_rec_anti_coll_dwn","Anti collision switch down",cmd_gnd_rec_anti_coll_dwn)
++replace_command("sim/lights/beacon_lights_on",cmd_beacon_lights_on)
++replace_command("sim/lights/beacon_lights_off",cmd_beacon_lights_off)
++replace_command("sim/lights/strobe_lights_on",cmd_strobe_lights_on)
++replace_command("sim/lights/strobe_lights_off",cmd_strobe_lights_off)
+ 
+ cmdseatbeltpasafetyup = create_command("laminar/CitX/lights/cmd_seat_belt_pass_safety_up","Seat belt switch up",cmd_seat_belt_pass_safety_up)
+ cmdseatbeltpasafetydwn = create_command("laminar/CitX/lights/cmd_seat_belt_pass_safety_dwn","Seat belt switch down",cmd_seat_belt_pass_safety_dwn)
+ 
+ cmdrecognitiontog = create_command("laminar/CitX/lights/cmd_recognition_toggle","Recognition lights switch toggle",cmd_recognition_toggle)
+ cmdnavigationtog = create_command("laminar/CitX/lights/cmd_navigation_toggle","Navigation lights switch toggle",cmd_navigation_toggle)
++replace_command("sim/lights/nav_lights_on",cmd_navigation_on)
++replace_command("sim/lights/nav_lights_off",cmd_navigation_off)
+ cmdtailfloodtog = create_command("laminar/CitX/lights/cmd_tail_flood_toggle","Tail flood lights switch toggle",cmd_tail_flood_toggle)
+ 
+ cmdtaxitog = create_command("laminar/CitX/lights/cmd_taxi_toggle","Taxi lights switch toggle",cmd_taxi_toggle)
++replace_command("sim/lights/taxi_lights_on",cmd_taxi_on)
++replace_command("sim/lights/taxi_lights_off",cmd_taxi_off)
+ cmdlandingLtog = create_command("laminar/CitX/lights/cmd_landing_left_toggle","Landing lights left toggle",cmd_landing_L_toggle)
+ cmdlandingRtog = create_command("laminar/CitX/lights/cmd_landing_right_toggle","Landing lights right toggle",cmd_landing_R_toggle)
++replace_command("sim/lights/landing_lights_on",cmd_landing_on)
++replace_command("sim/lights/landing_lights_off",cmd_landing_off)
+ 
+ cmdcabinsafeguardtoggle = create_command("laminar/CitX/lights/cmd_cabin_safeguard_toggle","Cabin master safeguard",cmd_cabin_safeguard_toggle)
+ cmdcabinmastertoggle = create_command("laminar/CitX/lights/cmd_cabin_master_toggle","Cabin master toggle",cmd_cabin_master_toggle)

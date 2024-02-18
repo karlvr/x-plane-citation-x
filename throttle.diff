@@ -1,0 +1,45 @@
+--- plugins/xlua/scripts/CitX_throttle/CitX_throttle.lua	2022-11-06 13:10:26
++++ /Users/karlvr/Development/Cessna Citation X/plugins/xlua/scripts/CitX_throttle/CitX_throttle.lua	2024-02-18 17:42:29
+@@ -116,6 +116,31 @@
+ 
+ end
+ 
++function cmd_engine_cutoff_left(phase, duration)
++	if phase == 0 then
++		CitX_throttle_ratio_L = -1
++		func_ratio_L()
++	elseif phase == 2 then
++		-- first bump the throttle to _nearly_ idle so the func_ratio function sets the mixture correctly
++		CitX_throttle_ratio_L = -0.0000000000001
++		func_ratio_L()
++		CitX_throttle_ratio_L = 0
++		func_ratio_L()
++	end
++end
++
++function cmd_engine_cutoff_right(phase, duration)
++	if phase == 0 then
++		CitX_throttle_ratio_R = -1
++		func_ratio_R()
++	elseif phase == 2 then
++		-- first bump the throttle to _nearly_ idle so the func_ratio function sets the mixture correctly
++		CitX_throttle_ratio_R = -0.0000000000001
++		func_ratio_R()
++		CitX_throttle_ratio_R = 0
++		func_ratio_R()
++	end
++end
+ 
+ 
+ 
+@@ -171,8 +196,9 @@
+ cmdstowemerLtog = create_command("laminar/CitX/throttle/stow_emer_L_toggle","Emergency stow reverse left toggle",cmd_stow_emer_L_toggle)
+ cmdstowemerRtog = create_command("laminar/CitX/throttle/stow_emer_R_toggle","Emergency stow reverse right toggle",cmd_stow_emer_R_toggle)
+ 
++create_command("laminar/CitX/engine/cmd_mixture_left_min", "Engine cut-off left", cmd_engine_cutoff_left)
++create_command("laminar/CitX/engine/cmd_mixture_right_min", "Engine cut-off right", cmd_engine_cutoff_right)
+ 
+-
+ --------------------------------- RUNTIME ---------------------------------
+ 
+ -- DO THIS EACH FLIGHT START

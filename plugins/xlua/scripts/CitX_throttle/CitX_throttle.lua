@@ -119,16 +119,26 @@ end
 function cmd_engine_cutoff_left(phase, duration)
 	if phase == 0 then
 		CitX_throttle_ratio_L = -1
+		func_ratio_L()
 	elseif phase == 2 then
+		-- first bump the throttle to _nearly_ idle so the func_ratio function sets the mixture correctly
+		CitX_throttle_ratio_L = -0.0000000000001
+		func_ratio_L()
 		CitX_throttle_ratio_L = 0
+		func_ratio_L()
 	end
 end
 
 function cmd_engine_cutoff_right(phase, duration)
 	if phase == 0 then
 		CitX_throttle_ratio_R = -1
+		func_ratio_R()
 	elseif phase == 2 then
+		-- first bump the throttle to _nearly_ idle so the func_ratio function sets the mixture correctly
+		CitX_throttle_ratio_R = -0.0000000000001
+		func_ratio_R()
 		CitX_throttle_ratio_R = 0
+		func_ratio_R()
 	end
 end
 

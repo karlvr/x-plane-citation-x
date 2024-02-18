@@ -50,6 +50,43 @@ function cmd_gnd_rec_anti_coll_dwn(phase, duration)
 	end
 end
 
+manual_beacon_lights_on = 0
+
+function cmd_beacon_lights_on(phase, duration)
+	if phase == 0 then
+		if gnd_rec_anti_coll_value < 1 then
+			gnd_rec_anti_coll_value = 1
+		end
+		manual_beacon_lights_on = 1
+	end
+end
+
+function cmd_strobe_lights_on(phase, duration)
+	if phase == 0 then
+		gnd_rec_anti_coll_value = 2
+	end
+end
+
+function cmd_beacon_lights_off(phase, duration)
+	if phase == 0 then
+		if gnd_rec_anti_coll_value == 1 then
+			-- don't turn off if strobes are on
+			gnd_rec_anti_coll_value = 0
+		end
+		manual_beacon_lights_on = 0
+	end
+end
+
+function cmd_strobe_lights_off(phase, duration)
+	if phase == 0 then
+		if manual_beacon_lights_on == 1 then
+			gnd_rec_anti_coll_value = 1
+		else
+			gnd_rec_anti_coll_value = 0
+		end
+	end
+end
+
 ----------------------------------- SEAT BELT - PASS SAFETY SWITCH UP/DWN
 function cmd_seat_belt_pass_safety_up(phase, duration)
 	if phase == 0 and seat_belt_pass_safety_value > -1 then
@@ -69,6 +106,17 @@ function cmd_recognition_toggle(phase, duration)
 	end
 end
 
+function cmd_recognition_on(phase, duration)
+	if phase == 0 then
+		recognition_value = 1
+	end
+end
+
+function cmd_recognition_off(phase, duration)
+	if phase == 0 then
+		recognition_value = 0
+	end
+end
 
 ----------------------------------- NAVIGATION SWITCH UP/DWN
 function cmd_navigation_toggle(phase, duration)
@@ -201,6 +249,10 @@ CitX_landing_right = create_dataref("laminar/CitX/lights/landing_right","number"
 
 cmdgndrecanticollup = create_command("laminar/CitX/lights/cmd_gnd_rec_anti_coll_up","Anti collision switch up",cmd_gnd_rec_anti_coll_up)
 cmdgndrecanticolldwn = create_command("laminar/CitX/lights/cmd_gnd_rec_anti_coll_dwn","Anti collision switch down",cmd_gnd_rec_anti_coll_dwn)
+replace_command("sim/lights/beacon_lights_on",cmd_beacon_lights_on)
+replace_command("sim/lights/beacon_lights_off",cmd_beacon_lights_off)
+replace_command("sim/lights/strobe_lights_on",cmd_strobe_lights_on)
+replace_command("sim/lights/strobe_lights_off",cmd_strobe_lights_off)
 
 cmdseatbeltpasafetyup = create_command("laminar/CitX/lights/cmd_seat_belt_pass_safety_up","Seat belt switch up",cmd_seat_belt_pass_safety_up)
 cmdseatbeltpasafetydwn = create_command("laminar/CitX/lights/cmd_seat_belt_pass_safety_dwn","Seat belt switch down",cmd_seat_belt_pass_safety_dwn)

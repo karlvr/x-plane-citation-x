@@ -1,0 +1,36 @@
+--- fmod/Cessna_CitationX.snd	2023-10-05 23:47:34
++++ /Users/karlvr/Development/Cessna Citation X/fmod/Cessna_CitationX.snd	2024-02-18 16:36:23
+@@ -3225,6 +3225,16 @@
+ 	EVENT_NAME /citx/equipment/switches/switch_white_small
+ 	VEH_XYZ 0.015 0.198 -7.573
+ 	EVENT_POLYPHONIC
++	EVENT_CMND_DOWN sim/lights/taxi_lights_on
++END_SOUND_ATTACHMENT
++BEGIN_SOUND_ATTACHMENT
++	EVENT_NAME /citx/equipment/switches/switch_white_small
++	VEH_XYZ 0.015 0.198 -7.573
++	EVENT_CMND_DOWN sim/lights/taxi_lights_off
++END_SOUND_ATTACHMENT
++BEGIN_SOUND_ATTACHMENT
++	EVENT_NAME /citx/equipment/switches/switch_white_small
++	VEH_XYZ 0.015 0.198 -7.573
+ 	EVENT_CMND_DOWN laminar/CitX/lights/cmd_landing_left_toggle
+ END_SOUND_ATTACHMENT
+ BEGIN_SOUND_ATTACHMENT
+@@ -3232,6 +3242,16 @@
+ 	VEH_XYZ 0.015 0.198 -7.573
+ 	EVENT_POLYPHONIC
+ 	EVENT_CMND_DOWN laminar/CitX/lights/cmd_landing_right_toggle
++END_SOUND_ATTACHMENT
++BEGIN_SOUND_ATTACHMENT
++	EVENT_NAME /citx/equipment/switches/switch_white_small
++	VEH_XYZ 0.015 0.198 -7.573
++	EVENT_CMND_DOWN sim/lights/landing_lights_on
++END_SOUND_ATTACHMENT
++BEGIN_SOUND_ATTACHMENT
++	EVENT_NAME /citx/equipment/switches/switch_white_small
++	VEH_XYZ 0.015 0.198 -7.573
++	EVENT_CMND_DOWN sim/lights/landing_lights_off
+ END_SOUND_ATTACHMENT
+ BEGIN_SOUND_ATTACHMENT
+ 	EVENT_NAME /citx/equipment/switches/sel_white

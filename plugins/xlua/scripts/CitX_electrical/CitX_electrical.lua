@@ -272,8 +272,6 @@ cmdextpwrtog = create_command("laminar/CitX/electrical/cmd_ext_pwr_toggle","Exte
 cmdstbypwrup = create_command("laminar/CitX/electrical/cmd_stby_pwr_up","Standby power switch up",cmd_stby_pwr_up)
 cmdstbypwrdwn = create_command("laminar/CitX/electrical/cmd_stby_pwr_dwn","Standby power switch down",cmd_stby_pwr_dwn)
 cmdavionicstog = create_command("laminar/CitX/electrical/cmd_avionics_toggle","Avionics switch toggle",cmd_avionics_toggle)
-create_command("laminar/CitX/electrical/cmd_avionics_on","Avionics switch on",cmd_avionics_on)
-create_command("laminar/CitX/electrical/cmd_avionics_off","Avionics switch off",cmd_avionics_off)
 replace_command("sim/systems/avionics_on",cmd_avionics_on)
 replace_command("sim/systems/avionics_off",cmd_avionics_off)
 cmdavionicseicastog = create_command("laminar/CitX/electrical/cmd_avionics_eicas_toggle","Avionics EICAS switch toggle",cmd_avionics_eicas_toggle)

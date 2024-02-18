@@ -1,0 +1,64 @@
+--- plugins/xlua/scripts/CitX_electrical/CitX_electrical.lua	2023-06-06 12:00:48
++++ /Users/karlvr/Development/Cessna Citation X/plugins/xlua/scripts/CitX_electrical/CitX_electrical.lua	2024-02-18 17:49:15
+@@ -170,10 +170,34 @@
+ 	end
+ end
+ 
++function cmd_avionics_on(phase, duration)
++	if phase == 0 then
++		avionics_value = 1
++	end
++end
++
++function cmd_avionics_off(phase, duration)
++	if phase == 0 then
++		avionics_value = 0
++	end
++end
++
+ ----------------------------------- AVIONICS EICAS SWITCH UP/DWN
+ function cmd_avionics_eicas_toggle(phase, duration)
+ 	if phase == 0 then
+ 		avionics_eicas_value = math.abs(avionics_eicas_value - 1)
++	end
++end
++
++function cmd_avionics_eicas_on(phase, duration)
++	if phase == 0 then
++		avionics_eicas_value = 1
++	end
++end
++
++function cmd_avionics_eicas_off(phase, duration)
++	if phase == 0 then
++		avionics_eicas_value = 0
+ 	end
+ end
+ 
+@@ -248,14 +272,26 @@
+ cmdstbypwrup = create_command("laminar/CitX/electrical/cmd_stby_pwr_up","Standby power switch up",cmd_stby_pwr_up)
+ cmdstbypwrdwn = create_command("laminar/CitX/electrical/cmd_stby_pwr_dwn","Standby power switch down",cmd_stby_pwr_dwn)
+ cmdavionicstog = create_command("laminar/CitX/electrical/cmd_avionics_toggle","Avionics switch toggle",cmd_avionics_toggle)
++replace_command("sim/systems/avionics_on",cmd_avionics_on)
++replace_command("sim/systems/avionics_off",cmd_avionics_off)
+ cmdavionicseicastog = create_command("laminar/CitX/electrical/cmd_avionics_eicas_toggle","Avionics EICAS switch toggle",cmd_avionics_eicas_toggle)
++create_command("laminar/CitX/electrical/cmd_avionics_eicas_on","Avionics EICAS switch on",cmd_avionics_eicas_on)
++create_command("laminar/CitX/electrical/cmd_avionics_eicas_off","Avionics EICAS switch off",cmd_avionics_eicas_off)
++replace_command("sim/systems/gnd_com_power_on",cmd_avionics_eicas_on)
++replace_command("sim/systems/gnd_com_power_off",cmd_avionics_eicas_off)
+ 
++
+ -- Extra commands for simpits (XPD-13818), not used here.
+ create_command("laminar/CitX/electrical/cmd_battery_left_on","Battery L switch on", cmd_battery_left_on)
+ create_command("laminar/CitX/electrical/cmd_battery_left_off","Battery L switch off", cmd_battery_left_off)
+ create_command("laminar/CitX/electrical/cmd_battery_right_on","Battery R switch on", cmd_battery_right_on)
+ create_command("laminar/CitX/electrical/cmd_battery_right_off","Battery R switch off", cmd_battery_right_off)
+ 
++replace_command("sim/electrical/battery_1_on",cmd_battery_left_on)
++replace_command("sim/electrical/battery_1_off",cmd_battery_left_off)
++replace_command("sim/electrical/battery_2_on",cmd_battery_right_on)
++replace_command("sim/electrical/battery_2_off",cmd_battery_right_off)
++
+ --------------------------------- DO THIS EACH FLIGHT START ---------------------------------
+ function flight_start()
+ 
