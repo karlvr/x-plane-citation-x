@@ -9,11 +9,11 @@ Open a command prompt at the root of this project. Update the `TARGET` variable 
 
 ```shell
 TARGET=~/X-Plane\ 12/Aircraft/Laminar\ Research/Cessna\ Citation\ X
-patch -d $TARGET < electrical.diff
-patch -d $TARGET < lights.diff
-patch -d $TARGET < throttle.diff
-patch -d $TARGET < sounds.diff
-cp xsaitekpanels.ini $TARGET/
+patch -d "$TARGET" -p 0 < electrical.diff
+patch -d "$TARGET" -p 0 < lights.diff
+patch -d "$TARGET" -p 0 < throttle.diff
+patch -d "$TARGET" -p 0 < sounds.diff
+cp xsaitekpanels.ini "$TARGET/"
 ```
 
 ## Patches
